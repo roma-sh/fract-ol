@@ -6,11 +6,11 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 07:56:46 by rshatra           #+#    #+#             */
-/*   Updated: 2024/06/16 04:26:50 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/06/17 00:28:24 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../include/fractol.h"
 
 int	ft_strncmp(const char *str1, const char *str2, size_t x)
 {
