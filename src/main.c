@@ -6,11 +6,11 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:18:18 by rshatra           #+#    #+#             */
-/*   Updated: 2024/06/16 04:06:47 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/06/17 00:28:12 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../include/fractol.h"
 
 void	draw(void *param)
 {
@@ -55,6 +55,8 @@ int	main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	mlx_loop_hook(fractol.mlx, draw, &fractol);
+	mlx_scroll_hook(fractol.mlx, zoom, &fractol);
+	mlx_loop_hook(fractol.mlx, keyboard_control, &fractol);
 	mlx_loop(fractol.mlx);
 	mlx_terminate(fractol.mlx);
 	return (0);

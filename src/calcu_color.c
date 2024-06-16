@@ -6,11 +6,11 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 02:09:35 by rshatra           #+#    #+#             */
-/*   Updated: 2024/06/16 04:09:21 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/06/17 00:27:49 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../include/fractol.h"
 
 uint32_t	julia_set(t_fractol *fractol, t_complex *c)
 {
@@ -73,8 +73,8 @@ int32_t	bernstein_color(double x, int *rgb)
 
 void	ztrans(t_complex *z, t_fractol *fractal, t_pixel *pixel)
 {
-	z->re = (+1.0) * fractal->zoom * pixel->w + fractal->b.re;
-	z->im = (-1.0) * fractal->zoom * pixel->h + fractal->b.im;
+	z->re = (+1.0) * fractal->factor * pixel->w + fractal->b.re;
+	z->im = (-1.0) * fractal->factor * pixel->h + fractal->b.im;
 }
 
 int32_t	pixel_color(int32_t r, int32_t g, int32_t b, int32_t a)

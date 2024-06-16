@@ -6,11 +6,11 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 19:49:42 by rshatra           #+#    #+#             */
-/*   Updated: 2024/06/16 04:15:31 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/06/17 00:27:59 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../include/fractol.h"
 
 void	init_julia(t_fractol *fractol, char *s1, char *s2)
 {
@@ -19,13 +19,14 @@ void	init_julia(t_fractol *fractol, char *s1, char *s2)
 	fractol->c.im = ft_atof(s2);
 	fractol->name = "julia";
 	fractol->f = julia_set;
-	fractol->zoom = fractol->axis_len / SIZE;
-	fractol->rgb[0] = 0;
-	fractol->rgb[1] = 1;
+	fractol->factor = fractol->axis_len / SIZE;
+	fractol->rgb[0] = 1;
+	fractol->rgb[1] = 0;
 	fractol->rgb[2] = 2;
-	fractol->max_iter = 100;
+	fractol->max_iter = MAX_ITE;
 	fractol->b.re = 0.0 - fractol->axis_len / 2.0;
 	fractol->b.im = 0.0 + fractol->axis_len / 2.0;
+	fractol->color_shift = 0;
 }
 
 void	init_mandelbrot(t_fractol *fractol)
@@ -33,13 +34,14 @@ void	init_mandelbrot(t_fractol *fractol)
 	fractol->axis_len = 4.0;
 	fractol->name = "mandelbrot";
 	fractol->f = mandelbrot_set;
-	fractol->zoom = fractol->axis_len / SIZE;
-	fractol->rgb[0] = 0;
-	fractol->rgb[1] = 1;
+	fractol->factor = fractol->axis_len / SIZE;
+	fractol->rgb[0] = 1;
+	fractol->rgb[1] = 0;
 	fractol->rgb[2] = 2;
-	fractol->max_iter = 100;
+	fractol->max_iter = MAX_ITE;
 	fractol->b.re = 0.0 - fractol->axis_len / 2.0;
 	fractol->b.im = 0.0 + fractol->axis_len / 2.0;
+	fractol->color_shift = 0;
 }
 
 int	init(t_fractol *fractol)

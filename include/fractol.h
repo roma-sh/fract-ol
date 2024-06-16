@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 07:56:26 by rshatra           #+#    #+#             */
-/*   Updated: 2024/06/16 04:46:27 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/06/17 00:28:57 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # include <math.h>
 
 # define SIZE 800
+# define MAX_ITE 50
+# define STEP 12
 
 typedef struct s_pixel
 {
@@ -44,10 +46,11 @@ typedef struct s_fractol
 	t_complex		c;
 	t_complex		b;
 	unsigned int	(*f)(struct s_fractol *fractol, t_complex *c);
-	double			zoom;
+	double			factor;
 	double			axis_len;
 	uint32_t		max_iter;
 	int				rgb[3];
+	int				color_shift;
 }	t_fractol;
 
 int					ft_strncmp(const char *str1, const char *str2, size_t x);
@@ -61,5 +64,7 @@ uint32_t			mandelbrot_set(t_fractol *fractol, t_complex *c);
 int32_t				bernstein_color(double x, int *rgb);
 int32_t				pixel_color(int32_t r, int32_t g, int32_t b, int32_t a);
 void				draw(void *param);
-
+void				zoom(double xdelta, double ydelta, void *param);
+void				keyboard_control(void *param);
+void				color_shift(t_fractol *fr);
 #endif
