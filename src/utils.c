@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 07:56:46 by rshatra           #+#    #+#             */
-/*   Updated: 2024/06/14 20:15:27 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/06/16 04:26:50 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,30 +25,30 @@ int	ft_strncmp(const char *str1, const char *str2, size_t x)
 	return ((unsigned char)(*str1) - (unsigned char)(*str2));
 }
 
-double	ft_atof(const char *str)
+double	ft_atof(const char *s)
 {
-	double	res;
-	double	sign;
+	long	before_dot;
 	double	after_dot;
+	double	pow;
+	int		sign;
 
-	res = 0;
-	sign = 1;
+	before_dot = 0;
 	after_dot = 0;
-	if (*str == '-')
+	sign = +1;
+	pow = 1;
+	while ((*s >= 9 && *s <= 13) || 32 == *s)
+		++s;
+	while ('+' == *s || '-' == *s)
+		if ('-' == *s++)
+			sign = -sign;
+	while (*s != '.' && *s)
+		before_dot = (before_dot * 10) + (*s++ - 48);
+	if ('.' == *s)
+		++s;
+	while (*s)
 	{
-		sign = -1;
-		str++;
+		pow /= 10;
+		after_dot = after_dot + (*s++ - 48) * pow;
 	}
-	while (*str && *str != '.')
-		res = res * 10 + *str++ - '0';
-	if (*str == '.')
-	{
-		str++;
-		while (*str)
-		{
-			after_dot = after_dot * 10 + *str - '0';
-			str++;
-		}
-	}
-	return (res + after_dot / 10);
+	return ((before_dot + after_dot) * sign);
 }
