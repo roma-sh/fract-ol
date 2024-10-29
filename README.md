@@ -5,7 +5,7 @@ Fractals are intricate structures that exhibit self-similarity across different 
 The term "fractal" was first introduced by mathematician Benoit Mandelbrot in 1974, derived from the Latin word *fractus*, meaning "broken" or "fractured".
 Fractals can be seen as abstract mathematical objects that manifest in various natural phenomena, such as the mesmerizing patterns of a romanesco cabbage.
 
-![A real fractal image "romanesco cabbage"](path/to/your/image1.png)
+![A real fractal image "romanesco cabbage"](https://github.com/roma-sh/fract-ol/blob/master/images/real_fract.jpg)
 
 In this project, we explore the beauty of fractals through computer graphics, using the MLX42 library to render these captivating forms.
 
@@ -38,11 +38,13 @@ Clone the repository:
    ```bash
    git clone https://github.com/roma-sh/fract-ol.git
    cd fractal
+   ```
 
 ## Usage
    ```bash
    make
    ./fractol <parameters>
+   ```
 
 ## Command-Line Options
 - mandelbrot: Displays the Mandelbrot set.
@@ -52,10 +54,10 @@ Clone the repository:
 ## Example
    ```bash
    ./fractol mandelbrot
-
+  ````
    ```bash
    ./fraactol julia -0.8 0.156
-
+   ```
 
 ## Control
 - Mouse Wheel: Zoom in and out of the fractal.
@@ -64,8 +66,8 @@ Clone the repository:
 - ESC: Close the window and exit the program.
 - Close Button: Click the close button on the window's frame to exit cleanly.
 
-![Mandelbrot set](path/to/your/image1.png)
+![Mandelbrot set](https://github.com/roma-sh/fract-ol/blob/master/images/mandelbrot.png)
 
-![Julia set for fc, c = −0.8 + 0.156i](path/to/your/image1.png)
+![Julia set for fc, c = −0.8 + 0.156i](https://github.com/roma-sh/fract-ol/blob/master/images/julia.png)
 
-![Julia set for fc, c = −0.4 + 0.6i](path/to/your/image1.png)
+![Julia set for fc, c = −0.4 + 0.6i](https://github.com/roma-sh/fract-ol/blob/master/images/julia2.png)
