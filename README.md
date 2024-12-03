@@ -1,6 +1,6 @@
 # Fract’ol
 
-![Mandelbrot set colors](https://github.com/roma-sh/fract-ol/blob/master/images/mandelbrot.png)
+![Mandelbrot set colors](https://github.com/roma-sh/fract-ol/blob/master/images/julia_colors.gif)
 
 ## Introduction
 Fractals are intricate structures that exhibit self-similarity across different scales.
