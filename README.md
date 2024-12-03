@@ -1,5 +1,7 @@
 # Fract’ol
 
+![Julia set colors](https://github.com/roma-sh/fract-ol/blob/master/images/mandelbrot.png)
+
 ## Introduction
 Fractals are intricate structures that exhibit self-similarity across different scales.
 The term "fractal" was first introduced by mathematician Benoit Mandelbrot in 1974, derived from the Latin word *fractus*, meaning "broken" or "fractured".
